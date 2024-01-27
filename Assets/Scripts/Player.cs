@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float _jumpForce;
     [SerializeField] private int _coins;
 
+    private int isRunHash = Animator.StringToHash("isRun");
     private Animator _animator;
 
     private void Awake()
@@ -32,6 +33,6 @@ public class Player : MonoBehaviour
 
     private void TurnAnimator()
     {
-        _animator.SetBool("isRun", _movement.IsRun);
+        _animator.SetBool(isRunHash, _movement.IsRun);
     }
 }
